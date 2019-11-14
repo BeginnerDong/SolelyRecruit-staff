@@ -1,0 +1,29 @@
+
+.bsnisCard_head{background: #fff;}
+.bsnisCard_head .Lname{width: 30%;height: 165px;}
+.bsnisCard_head .R-infor{width: 70%;box-sizing: border-box;padding: 0 4%; }
+.bsnisCard_head .R-infor .icon{width:13px; height:13px; display: block; margin:5px 10px 0 0;}
+.bsnisCard_head .R-infor .item{color: #666; margin-top: 5px; align-items: flex-start;}
+
+.bsnisCard-box1 .tit .icon{width:10px; height: 7px; display: block;margin: 0 5px 15px 5px;}
+.bsnisCard-box1 .btns .tt{width: 100px;display: block;margin: 0 10px;border: 1px solid #398EF9;box-sizing: border-box;color: #398EF9;border-radius: 4px; line-height: 25px;}
+.bsnisCard-box1 .btns .tt.on{background: #398EF9; color: #fff;}
+.bsnisCard-box1 .lookPer .left{width:70%; }
+.bsnisCard-box1 .lookPer .photo{width: 26px; height: 26px; border-radius: 50%;display: block;margin-right: 5px;}
+.bsnisCard-box1 .zan{width: 20px; height: 20px; display: block;}
+
+.bsnisCard-box2{margin: 15px 4%;padding:20px 15px;box-sizing: border-box;}
+.bsnisCard-box2 li{align-items: flex-start;margin-bottom: 12px;}
+.bsnisCard-box2 li:last-child{margin-bottom: 0;}
+.bsnisCard-box2 li .ll{font-size: 13px;color: #666;width: 80%; align-items: flex-start;}
+.bsnisCard-box2 li .ll .tt{color: #aaa;margin-right: 10px; width: 30px;}
+.bsnisCard-box2 li .ll .text{width: 80%;}
+.bsnisCard-box2 li .rr{color: #398EF9;padding:0 10px;}
+
+.bsnisCard-box3{flex-wrap: wrap;padding: 15px 15px 8px 15px;}
+.bsnisCard-box3 .pic{width: 100px; height: 120px;display: block;margin:0 7px 7px 0;}
+.bsnisCard-box3 .pic:nth-child(3n){margin-right: 0;}
+
+.Rfix-Btn{ position: fixed; right: 4%;bottom: 80px; }
+.Rfix-Btn a{width:40px; height:40px; line-height: 40px;background: #398EF9;text-align: center; display: block; margin: 0 auto;box-shadow: 0 0 5px rgba(0, 70, 158, 0.6); display: block; border-radius: 50%;color: #fff;font-size: 14px;}
+

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="renderer" content="webkit">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<title>内推奖励</title>
+		<script src="./js/vue.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/base.js"></script>
+		<link type="text/css" rel="stylesheet" href="css/public.css">
+		<link rel="stylesheet" type="text/css" href="css/page.css">
+	</head>
+
+<body>
+	<div id="app">
+		<!-- 标题 -->
+		<div class="T-head line50 center fs16 Tfix-head">
+			<a class="back-next pa" href="javascript:history.go(-1);"><img class="icon" src="images/backIcon.png" ></a>内推奖励
+		</div>
+		<div class="h50"></div>
+		<div class="myExtendTop white pr">
+			<div class="bigNum">500<em class="fs12">&nbsp;元</em></div>
+			<div class="yuan pdt5 pdb15 fs14">总奖励</div>
+			<a class="txBtn fs12" href="user_myCashOut.html">提现</a>
+			<div class="rewarddata white fs12">
+				<ul class="flexRowBetween">
+					<li class="item flexColumn">
+						<p class="num">200</p>
+						<p class="text">投递</p>
+					</li>
+					<li class="item flexColumn">
+						<p class="num">100</p>
+						<p class="text">面试</p>
+					</li>
+					<li class="item flexColumn">
+						<p class="num">200</p>
+						<p class="text">入职</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		<div class="myRowBetween pdlr4" >
+			<div class="item flexRowBetween" v-for="item in rewardDate">
+				<div class="left flex">
+					<img class="photo" src="images/push-img.png" >
+					<div class="infor">
+						<h1 class="ftn avoidOverflow">张婷&nbsp;·&nbsp;<em class="pubColor">会计助理</em></h1>
+						<div class="phone mgt5 fs13 color9">1568985232</div>
+					</div>
+				</div>
+				<div class="right fs12">
+					<p class="ftr mgb5">状态：已投递</p>
+					<p class="ftr">奖励：<em class="red fs13">20</em></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+	
+<script type="text/javascript">
+	var app = new Vue({
+		    el: '#app',
+		    data:function(){
+		        return {
+					is_show:false,
+					mainData: [],
+					rewardDate:[{},{},{}]
+		        }
+		    },
+		    onLoad() {
+		    	const self = this;
+		    	// self.$Utils.loadAll(['getMainData'], self);
+		    },
+		    methods: {
+				
+				getMainData() {
+					const self = this;
+					const postData = {};
+					postData.tokenFuncName = 'getProjectToken';
+					var callback = function(res){
+					    console.log('getMainData', res);
+					    self.mainData.push.apply(self.mainData,res.info.data);		        
+					};
+					self.$apis.orderGet(postData, callback);
+				}
+		    }
+		});
+	</script>
+
+<style>
+/* 我的收益 */
+.myExtendTop{width: 100%; text-align: center;box-sizing: border-box;padding: 20px 4%; background: #398EF9;}
+.myExtendTop .bigNum{font-size: 40px; padding: 0 4%; line-height:40px;}
+.myExtendTop .txBtn{ width: 50px; height: 24px;line-height: 24px; background: #fff; color: #398EF9; border-radius: 20px;  display: block;position: absolute; top: 20px;right: 10px;}
+
+.rewarddata .item{width: 33.3%;position: relative;}
+.rewarddata .item .num{font-size: 14px;margin-bottom: 3px;}
+.rewarddata .item:after{content: ''; width: 0px; height: 25px;border-right: 1px dashed #fff;position: absolute;right: 0;top: 50%;transform: translateY(-50%);}
+.rewarddata .item:last-child:after{display: none;}
+
+/* 信息RowBetween */
+.myRowBetween .item{ padding: 15px 0;border-bottom: 1px solid #eee;background: #fff;}
+.myRowBetween .item .left{width: 75%;}
+.myRowBetween .item .left .photo{width: 50px; height: 50px; display: block;margin-right: 5px;}
+.myRowBetween .item .left .infor{width: 75%;}
+.myRowBetween .item .right{width: 25%;}
+</style>
+</html>

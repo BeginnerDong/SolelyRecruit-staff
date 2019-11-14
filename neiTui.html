@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="renderer" content="webkit">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<title>内推</title>
+	<script src="./js/vue.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/base.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" type="text/css" href="css/navbar.css">
+</head>
+
+<body style="padding-bottom: 120px;">
+	<div id="app">
+		<!-- 标题 -->
+		<div class="T-head line50 center fs16 Tfix-head">内推</div>
+		<div class="h50"></div>
+		
+		<div class="neituiList pdlr4">
+			<ul>
+				<li v-for="item in neituiDate" :key="index">
+					<a class="flexRowBetween" href="neiTuiDetail.html">
+						<div class="flex ll">
+							<img class="Lphoto" src="images/push-img1.png" >
+							<div class="infor">
+								<p class="name fs14">会计助理</p>
+								<p class="lable fs13">克莱</p>
+								<p class="color9 fs12">西安&nbsp;|&nbsp;3年&nbsp;|&nbsp;本科</p>
+							</div>
+						</div>
+						<div class="rr">
+							<div class="red mgb20 flexEnd">4K-6K</div>
+							<p class="fs12 color9 flexEnd">10月20日</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		
+		
+		<!--底部tab键-->
+		<div class="navbar flexRowBetween">
+			<div class="navbar_item">
+				<a href="index.html">
+					<div class="nav_img">
+						<img src="images/nabar1.png" />
+					</div>
+					<div class="text">工作台</div>
+				</a>
+			</div>
+			<div class="navbar_item">
+				<a href="businessCard.html">
+					<div class="nav_img">
+						<img src="images/nabar2.png" />
+					</div>
+					<div class="text">名片</div>
+				</a>
+			</div>
+			<div class="navbar_item">
+				<a href="neiTui.html">
+					<div class="nav_img">
+						<img src="images/nabar3-a.png" />
+					</div>
+					<div class="text this-text">内推</div>
+				</a>
+			</div>
+			<div class="navbar_item">
+				<a href="user.html">
+					<div class="nav_img">
+						<img src="images/nabar4.png" />
+					</div>
+					<div class="text">个人中心</div>
+				</a>
+			</div>
+		</div>
+		<!--底部tab键 end-->
+		
+	</div>
+</body>
+	
+<script type="text/javascript">
+	var app = new Vue({
+		    el: '#app',
+		    data:function(){
+		        return {
+					is_show:false,
+					mainData: [],
+					neituiDate:[{},{},{}]
+		        }
+		    },
+		    onLoad() {
+		    	const self = this;
+		    	// self.$Utils.loadAll(['getMainData'], self);
+		    },
+		    methods: {
+				getMainData() {
+					const self = this;
+					const postData = {};
+					postData.tokenFuncName = 'getProjectToken';
+					var callback = function(res){
+					    console.log('getMainData', res);
+					    self.mainData.push.apply(self.mainData,res.info.data);		        
+					};
+					self.$apis.orderGet(postData, callback);
+				}
+		    }
+		});
+</script>
+
+<style type="text/css">
+.neituiList li{padding: 15px 0;border-bottom: 1px solid #eee;}
+.neituiList li .ll{width: 80%;}
+.neituiList li .rr{width: 20%;text-align: right;}	
+.neituiList li .ll .Lphoto{width: 55px;height: 55px;display: block;margin-right: 10px;}
+.neituiList li .ll .infor{width: 70%;}
+.neituiList li .ll .infor .lable{color: #666;line-height: 16px;padding: 3px 0;}
+
+</style>
+
+</html>
