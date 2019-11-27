@@ -1,0 +1,174 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页",//设置页面标题文字
+				"onReachBottomDistance":100
+				 //"navigationStyle":"custom"标题隐藏
+			}
+		},
+		{
+			"path": "pages/add_goOut/add_goOut",
+			"style": {
+				"navigationBarTitleText": "外出",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/add_Journal/add_Journal",
+			"style": {
+				"navigationBarTitleText": "日志",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/add_leave/add_leave",
+			"style": {
+				"navigationBarTitleText": "请假",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/businessCard/businessCard",
+			"style": {
+				"navigationBarTitleText": "名片",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/businessCard-edit/businessCard-edit",
+			"style": {
+				"navigationBarTitleText": "编辑名片",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/goOut/goOut",
+			"style": {
+				"navigationBarTitleText": "外出",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/neiTui/neiTui",
+			"style": {
+				"navigationBarTitleText": "内推",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/neiTuiDetail/neiTuiDetail",
+			"style": {
+				"navigationBarTitleText": "职位详情",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/qiandao/qiandao",
+			"style": {
+				"navigationBarTitleText": "考勤",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": "个人中心",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/user_myBankCard_add/user_myBankCard_add",
+			"style": {
+				"navigationBarTitleText": "添加银行卡",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/user_myCashOut/user_myCashOut",
+			"style": {
+				"navigationBarTitleText": "提现",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/user_myReward/user_myReward",
+			"style": {
+				"navigationBarTitleText": "内推奖励",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/user-dataStatistics/user-dataStatistics",
+			"style": {
+				"navigationBarTitleText": "数据统计",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/user-goOutRecord/user-goOutRecord",
+			"style": {
+				"navigationBarTitleText": "外出记录",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/user-journalRecord/user-journalRecord",
+			"style": {
+				"navigationBarTitleText": "日志记录",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/user-leaveRecord/user-leaveRecord",
+			"style": {
+				"navigationBarTitleText": "请假记录",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/user-myWages/user-myWages",
+			"style": {
+				"navigationBarTitleText": "我的工资",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/user-myWagesDetail/user-myWagesDetail",
+			"style": {
+				"navigationBarTitleText": "工资详情",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/user-signIn/user-signIn",
+			"style": {
+				"navigationBarTitleText": "签到记录",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/user-system/user-system",
+			"style": {
+				"navigationBarTitleText": "规章制度",//设置页面标题文字
+				"onReachBottomDistance":100
+			}
+		}
+		
+	],
+	
+	"globalStyle": {
+		"navigationBarTextStyle": "white",//导航栏文字蓝色
+		"navigationBarTitleText": "招聘-员工端",
+		"navigationBarBackgroundColor": "#398ef9"
+	},
+	"condition": { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [{
+			"name": "", //模式名称
+			"path": "", //启动页面，必选
+			"query": "" //启动参数，在页面的onLoad函数里面得到
+		}]
+	}
+}
